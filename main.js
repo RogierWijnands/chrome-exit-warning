@@ -15,9 +15,7 @@ chrome.runtime.onInstalled.addListener(() => {
   chrome.tabs.onRemoved.addListener((id, info) => {
     if (typeof tabs[id] !== 'undefined') {
       if (!info.isWindowClosing) {
-        console.log(id, tabs);
         tabs = tabs.splice(tabs.indexOf(id), 1);
-        console.log(id, tabs);
       }
     }
   });
